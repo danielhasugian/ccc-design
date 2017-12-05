@@ -59,7 +59,7 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="agent-home.html">
+            <a href="agent/agent-home.html">
               <i class="fa fa-tasks"></i>
               <span class="hidden-xs">Get Account</span>
             </a>
@@ -78,7 +78,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -91,7 +91,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -103,7 +103,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -115,7 +115,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Agent Department
@@ -127,7 +127,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -144,24 +144,20 @@
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../dist/img/avatar04.png" class="user-image" alt="User Image">
+              <img src="dist/img/avatar04.png" class="user-image" alt="User Image">
               <span class="hidden-xs">Agen 3C</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="../dist/img/avatar04.png" class="img-circle" alt="User Image">
+                <img src="dist/img/avatar04.png" class="img-circle" alt="User Image">
 
                 <p>
                   Agen 3C - Agen
                   <small>Member since Nov. 2017</small>
                 </p>
               </li>
-              <!-- Menu Footer-->
             </ul>
-          </li>
-          <li>
-            <a href="../index.html"><i class="fa fa-sign-out"></i></a>
           </li>
         </ul>
       </div>
@@ -173,12 +169,25 @@
     <section class="sidebar">
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../dist/img/bpjs-tk.png" class="img-circle" alt="User Image">
+          <img src="dist/img/bpjs-tk.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Welcome to 3C</p>
         </div>
       </div>
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">Sidebar user panel</li>
+        <li>
+          <a href="agent-blank.html">
+            <i class="fa fa-home"></i> <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="pages/chat/chat.html">
+            <i class="fa fa-comments"></i> <span>Chat</span>
+          </a>
+        </li>
+      </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -203,7 +212,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title" style="font-weight: bold;">Nama Perusahaan</h3> &nbsp;&nbsp; MAHENA II
+                  <h3 class="box-title" style="font-weight: bold;">Nama Perusahaan</h3>
                 </div>
                 <div class="box-body" id="data-perusahaan">
                   <div class="row">
@@ -214,7 +223,6 @@
                             <label>Kelas</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                         <tr>
@@ -222,7 +230,6 @@
                             <label>Status Perusahaan</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                         <tr>
@@ -230,7 +237,6 @@
                             <label>Kode Cabang</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                         <tr>
@@ -238,7 +244,6 @@
                             <label>NPP</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                       </table>
@@ -250,7 +255,6 @@
                             <label>Nama Pembina</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                         <tr>
@@ -258,7 +262,6 @@
                             <label>Nomor Pembina</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                         <tr>
@@ -266,7 +269,6 @@
                             <label>Alamat</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                         <tr>
@@ -274,7 +276,6 @@
                             <label>Tgl Awal PST</label>
                           </td>
                           <td>
-                            <span>Detail</span>
                           </td>
                         </tr>
                       </table>
@@ -306,79 +307,40 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Bank Mandiri</td>
-                          <td>EPS</td>
-                          <td>000</td>
-                          <td>2017-11-01 08:23:11</td>
-                          <td>85.432.654</td>
-                        </tr>
-                        <tr>
-                          <td>Bank Mandiri</td>
-                          <td>EPS</td>
-                          <td>000</td>
-                          <td>2017-10-20 12:10:05</td>
-                          <td>85.335.132</td>
-                        </tr>
-                        <tr>
-                          <td>Bank Mandiri</td>
-                          <td>EPS</td>
-                          <td>000</td>
-                          <td>2017-09-06 15:09:45</td>
-                          <td>85.313.352</td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>
                   <div class="tab-pane" id="tab_2">
                     <table class="table table-bordered table-hover datatable">
                       <thead>
-                        <tr>
-                          <th>Denda</th>
-                          <th>Nama Perusahaan</th>
-                          <th>Kode Perusahaan</th>
-                          <th>Kode Cabang</th>
-                          <th>Kode Div</th>
-                          <th>Umur Piutang</th>
-                        </tr>
+                      <tr>
+                        <th>Denda</th>
+                        <th>Nama Perusahaan</th>
+                        <th>Kode Perusahaan</th>
+                        <th>Kode Cabang</th>
+                        <th>Kode Div</th>
+                        <th>Umur Piutang</th>
+                      </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1.231.432</td>
-                          <td>MAHENA II</td>
-                          <td>68865</td>
-                          <td>J00</td>
-                          <td>000</td>
-                          <td>1</td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>
                   <div class="tab-pane" id="tab_3">
                     <table class="table table-bordered table-hover datatable">
                       <thead>
-                        <tr>
-                          <th>Voice</th>
-                          <th>Tanggal Tlp</th>
-                          <th>Tlp Dihubungi</th>
-                          <th>Contact Person</th>
-                          <th>Call Status</th>
-                          <th>Call Result</th>
-                          <th>Note</th>
-                          <th>Agent</th>
-                        </tr>
+                      <tr>
+                        <th>Voice</th>
+                        <th>Tanggal Tlp</th>
+                        <th>Tlp Dihubungi</th>
+                        <th>Contact Person</th>
+                        <th>Call Status</th>
+                        <th>Call Result</th>
+                        <th>Note</th>
+                        <th>Agent</th>
+                      </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td></td>
-                          <td>2017-10-17 14:23:44</td>
-                          <td>08321243845</td>
-                          <td>Ahmad</td>
-                          <td>CT - COntacted</td>
-                          <td>Not Promise to Pay</td>
-                          <td></td>
-                          <td>Bambang</td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -404,7 +366,7 @@
 
                         <div class="col-sm-6">
                           <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" value="0212332322">
+                            <input type="text" class="form-control">
                                 <span class="input-group-btn btn-dial">
                                   <button type="button" class="btn btn-success btn-flat start-dial"><i class="fa fa-phone"></i> Dial</button>
                                   <button type="button" class="btn btn-danger btn-flat stop-dial"><i class="fa fa-ban"></i> Stop</button>
@@ -425,7 +387,7 @@
 
                         <div class="col-sm-6">
                           <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" value="0212332323">
+                            <input type="text" class="form-control">
                                 <span class="input-group-btn btn-dial">
                                   <button type="button" class="btn btn-success btn-flat start-dial"><i class="fa fa-phone"></i> Dial</button>
                                   <button type="button" class="btn btn-danger btn-flat stop-dial"><i class="fa fa-ban"></i> Stop</button>
@@ -446,7 +408,7 @@
 
                         <div class="col-sm-6">
                           <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" value="0832124384">
+                            <input type="text" class="form-control">
                                 <span class="input-group-btn btn-dial">
                                   <button type="button" class="btn btn-success btn-flat start-dial"><i class="fa fa-phone"></i> Dial</button>
                                   <button type="button" class="btn btn-danger btn-flat stop-dial"><i class="fa fa-ban"></i> Stop</button>
@@ -511,21 +473,14 @@
                         <label for="" class="col-sm-4 control-label">Call Result</label>
 
                         <div class="col-sm-7">
-                          <select class="form-control" id="call-result">
-                            <option value="0">[Call Result]</option>
-                          </select>
+                          <select class="form-control" id="call-result"></select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="" class="col-sm-4 control-label">PIC</label>
 
                         <div class="col-sm-7">
-                          <select class="form-control">
-                            <option>[Contact Person]</option>
-                            <option>Ahmad</option>
-                            <option>Daniel</option>
-                            <option>Rahman</option>
-                          </select>
+                          <select class="form-control"></select>
                         </div>
                       </div>
                     </div>
@@ -538,8 +493,8 @@
                     </div>
 
                     <div class="form-group" style="text-align: center;">
-                      <a class="btn btn-primary btn-save" href="agent-blank.html"><i class="fa fa-save"></i> Save</a>
-                      <a class="btn btn-success btn-save" href="agent-blank.html"><i class="fa fa-mail-forward"></i> Save &amp; Next</a>
+                      <a class="btn btn-primary" href="agent-blank.html"><i class="fa fa-save"></i> Save</a>
+                      <a class="btn btn-success" href="agent-blank.html"><i class="fa fa-mail-forward"></i> Save &amp; Next</a>
                     </div>
                   </form>
                 </div>
@@ -550,72 +505,6 @@
       </div>
     </section>
     <!-- /.content -->
-    
-    <!-- HBK -->
-    <div class="modal fade" id="hbk">
-      <div class="modal-dialog" style="width: 300px;">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Telepon Kembali</h4>
-          </div>
-          <div class="modal-body">
-            <form role="form">
-              <div class="form-group">
-                <label>Time</label>
-                <select class="form-control" id="hbk-time"></select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PTP -->
-    <div class="modal fade" id="ptp">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Janji Bayar</h4>
-          </div>
-          <div class="modal-body">
-            <form class="form-horizontal">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="" class="col-sm-4 control-label">Tanggal Janji</label>
-                  <div class="col-sm-7">
-                    <div class="input-group date">
-                      <input type="text" class="form-control pull-right datepicker">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="" class="col-sm-4 control-label">Metode Pembayaran</label>
-                  <div class="col-sm-7">
-                    <select class="form-control">
-                      <option>ONLINE PAYMENT</option>
-                      <option>CASH</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- /.content-wrapper -->
@@ -648,91 +537,6 @@
 
 <script>
   $(function () {
-    var status = [
-      '[Contact Status]',
-      'CT - Contacted',
-      'FOLL - Follow Up',
-      'HBK - Hubungi Kembali'
-    ];
-
-    var ct = [
-      'Promise to Pay',
-      'Not Promise to Pay',
-      'Special Case',
-      'Need to Pick Up'
-    ];
-
-    var foll = [
-      'Tidak Diangkat/Dijawab',
-      'Sibuk',
-      'DI Luar Jangkauan',
-      'Tidak Aktif',
-      'Diputus/Terputus',
-      'Salah Sambung',
-      'Mailbox/Voice Mail',
-      'Dialihkan'
-    ];
-
-    var hbk = [
-      'Hubungi Kembali'
-    ];
-
-    var hbk_time = [
-      '5 minutes',
-      '10 minutes',
-      '15 minutes',
-      '30 minutes',
-      '1 hour',
-      '2 hour',
-      'Tomorrow'
-    ];
-
-    var $call_status = $('#call-status');
-    var $call_result = $('#call-result');
-
-    set_hbk_time();
-
-    $.each(status, function(k, v) {
-      $call_status.append($('<option></option>').val(k).text(v));
-    });
-
-    $call_status.on('change', function() {
-      var s = $(this).val();
-      $call_result.empty();
-      $call_result.append($('<option></option>').val('0').text('[Call Result]'));
-      switch (s) {
-        case '1':
-          $.each(ct, function(k, v) {
-            $call_result.append($('<option></option>').val(k+1).text(v));
-          });
-          break;
-
-        case '2':
-          $.each(foll, function(k, v) {
-            $call_result.append($('<option></option>').val(k+1).text(v));
-          });
-          break;
-
-        case '3':
-          $.each(hbk, function(k, v) {
-            $call_result.append($('<option></option>').val(k+1).text(v));
-          });
-          break;
-      }
-    });
-
-    $call_result.on('change', function() {
-      console.log($call_status.val() + "-" + $(this).val());
-      if (($call_status.val() === '3') && ($(this).val() === '1')) {
-        // alert('hbk');
-        $('#hbk').modal('show');
-      }
-      else if (($call_status.val() === '1') && ($(this).val() === '1')) {
-        // alert('janji bayar');
-        $('#ptp').modal('show');
-      }
-    });
-
     $('.datatable').DataTable({
       'paging'      : true,
       'lengthChange': false,
@@ -742,38 +546,7 @@
       'autoWidth'   : false
     });
 
-    $('.datepicker').datepicker({
-      autoclose: true
-    });
-
-    $('.start-dial').on('click', function(e) {
-      e.preventDefault();
-      if ($('.stop-dial:visible').length) {
-        alert('Cannot place call while calling other number!');
-      }
-      else {
-        $(this).css('display', 'none');
-        $(this).closest('.btn-dial').find('.stop-dial').css('display', 'initial');
-      }
-    });
-
-    $('.stop-dial').on('click', function(e) {
-      $(this).css('display', 'none');
-      $(this).closest('.btn-dial').find('.start-dial').css('display', 'initial');
-    });
-
-    $('.btn-save').on('click', function() {
-      if ($('.stop-dial:visible').length) {
-        alert('Cannot save progress while calling number!');
-        return false;
-      }
-    });
-
-    function set_hbk_time() {
-      $.each(hbk_time, function(k, v) {
-        $('#hbk-time').append($('<option></option>').text(v));
-      });
-    }
+    $('section.content button, section.content a.btn, select, input, textarea').attr('disabled', 'disabled');
   });
 </script>
 </body>
