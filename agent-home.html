@@ -36,6 +36,9 @@
     .stop-dial {
       display: none;
     }
+    #data-perusahaan td:first-child {
+      background: #eee;
+    }
   </style>
 </head>
 <body class="hold-transition skin-green sidebar-mini">
@@ -220,12 +223,20 @@
                 <div class="box-header with-border">
                   <h3 class="box-title" style="font-weight: bold;">Nama Perusahaan</h3> &nbsp;&nbsp; MAHENA II
                 </div>
-                <div class="box-body">
+                <div class="box-body" id="data-perusahaan">
                   <div class="row">
                     <div class="col-md-6">
                       <table class="table table-bordered">
                         <tr>
-                          <td class="col-md-5">
+                          <td class="col-sm-4">
+                            <label>Kelas</label>
+                          </td>
+                          <td>
+                            <span>Detail</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
                             <label>Status Perusahaan</label>
                           </td>
                           <td>
@@ -234,7 +245,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <label>Label</label>
+                            <label>Kode Cabang</label>
                           </td>
                           <td>
                             <span>Detail</span>
@@ -242,15 +253,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <label>Label</label>
-                          </td>
-                          <td>
-                            <span>Detail</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <label>Label</label>
+                            <label>NPP</label>
                           </td>
                           <td>
                             <span>Detail</span>
@@ -261,8 +264,8 @@
                     <div class="col-md-6">
                       <table class="table table-bordered">
                         <tr>
-                          <td class="col-md-5">
-                            <label>Label</label>
+                          <td class="col-sm-4">
+                            <label>Nama Pembina</label>
                           </td>
                           <td>
                             <span>Detail</span>
@@ -270,7 +273,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <label>Label</label>
+                            <label>Nomor Pembina</label>
                           </td>
                           <td>
                             <span>Detail</span>
@@ -278,7 +281,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <label>Label</label>
+                            <label>Alamat</label>
                           </td>
                           <td>
                             <span>Detail</span>
@@ -286,7 +289,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <label>Label</label>
+                            <label>Tgl Awal PST</label>
                           </td>
                           <td>
                             <span>Detail</span>
@@ -553,8 +556,8 @@
                     </div>
 
                     <div class="form-group" style="text-align: center;">
-                      <a class="btn btn-primary" href="agent-blank.html"><i class="fa fa-save"></i> Save</a>
-                      <a class="btn btn-success" href="agent-blank.html"><i class="fa fa-mail-forward"></i> Save &amp; Next</a>
+                      <a class="btn btn-primary btn-save" href="agent-blank.html"><i class="fa fa-save"></i> Save</a>
+                      <a class="btn btn-success btn-save" href="agent-blank.html"><i class="fa fa-mail-forward"></i> Save &amp; Next</a>
                     </div>
                   </form>
                 </div>
@@ -762,6 +765,7 @@
     });
 
     $('.start-dial').on('click', function(e) {
+      e.preventDefault();
       if ($('.stop-dial:visible').length) {
         alert('Cannot place call while calling other number!');
       }
@@ -774,6 +778,13 @@
     $('.stop-dial').on('click', function(e) {
       $(this).css('display', 'none');
       $(this).closest('.btn-dial').find('.start-dial').css('display', 'initial');
+    });
+
+    $('.btn-save').on('click', function() {
+      if ($('.stop-dial:visible').length) {
+        alert('Cannot save progress while calling number!');
+        return false;
+      }
     });
 
     function set_hbk_time() {
