@@ -21,6 +21,45 @@
   <link rel="stylesheet" href="../dist/css/custom.css">
   <![endif]-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <script>
+      function isEdit() {
+          var field = 'company';
+          var url = window.location.href;
+          console.log(url)
+          if(url.indexOf('?' + field + '=') != -1)
+              return true;
+          else if(url.indexOf('&' + field + '=') != -1)
+              return true;
+          return false
+      }
+
+      function setValue() {
+          document.getElementById("companyname").value = "CPP";
+          document.getElementById("branch").value = "Jakarta";
+          document.getElementById("NPP").value = "12891932";
+
+          document.getElementById("divcode").value = "7781";
+          document.getElementById("status").value = "Active";
+          document.getElementById("scaleenterprise").value = "Medium";
+
+          document.getElementById("dateregistration").value = "2016-09-09";
+
+          document.getElementById("PIC").value = "Bob Marley";
+          document.getElementById("handphone").value = "082178012812";
+          document.getElementById("phone1").value = "021-87621992";
+          document.getElementById("phone2").value = "-";
+          document.getElementById("address").value = "Jl Dasawarsa blokc C";
+
+      }
+
+      window.onload = function() {
+          if (isEdit()){
+              setValue();
+          }
+      };
+
+  </script>
 </head>
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
@@ -128,20 +167,10 @@
           </a>
         </li>
         <li>
-          <a href="statistic.html">
-            <i class="fa fa-clock-o"></i> <span> Report Statistic</span>
+          <a href="manage.html">
+            <i class="fa fa-clock-o"></i> <span>Manage Data Company</span>
           </a>
-        </li>
-        <li>
-          <a href="agent-performance.html">
-            <i class="fa fa-clock-o"></i> <span> Report Agent Performance</span>
-          </a>
-        </li>
-        <li>
-          <a href="result-call.html">
-            <i class="fa fa-clock-o"></i> <span> Report Result Company</span>
-          </a>
-        </li>
+        </li>s
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -155,49 +184,117 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Result Call</li>
+        <li><a href="manage.html"><i class="fa fa-dashboard"></i> Manage Data Compan</a></li>
+        <li class="active">Form Company</li>
       </ol>
     </section>
     <section class="content">
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Table Result Call</h3>
-          <button class="btn btn-primary pull-right">Print <i class="fa fa-print"></i></button>
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Form Company</h3>
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <table id="example1" class="table table-bordered table-striped">
-            <thead>
-            <tr>
-              <th>Company</th>
-              <th>Time</th>
-              <th>Agent ID</th>
-              <th>Status Call</th>
-              <th>Call Result</th>
-              <th>Receiver</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>Axa</td>
-              <td>12:00</td>
-              <td>Tono</td>
-              <td>Promise To Pay</td>
-              <td>Success</td>
-              <td>Daniel</td>
-            </tr>
-            <tr>
-              <td>Allianz</td>
-              <td>13:00</td>
-              <td>Tono</td>
-              <td>Promise To Pay</td>
-              <td>Success</td>
-              <td>Mega</td>
-            </tr>
-            </tbody>
-          </table>
+        <div class="form-horizontal">
+          <div class="box-body">
+            <div class="col-lg-6 col-xs-12">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Company Name</label>
+                <div class="col-sm-10">
+                  <input type="text" id="companyname" class="form-control" placeholder="Company Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">NPP</label>
+                <div class="col-sm-10">
+                  <input type="text" id="NPP" class="form-control" placeholder="Company Name">
+                </div>
+              </div>
+              <div class="form-group">
+               <label class="col-sm-2 control-label">Branch</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="branch">
+                    <option>Jakarta</option>
+                    <option>Bandung</option>
+                    <option>Semarang</option>
+                    <option>Medan</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Div Code</label>
+                <div class="col-sm-10">
+                  <input type="text" id="divcode" class="form-control" placeholder="Div Code">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="status">
+                    <option>Active</option>
+                    <option>Non Active</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Scale Enterprise</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="scaleenterprise">
+                    <option>Large</option>
+                    <option>Medium</option>
+                    <option>Small</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Date Registration</label>
+                <div class="col-sm-10">
+                  <input type="date" id="dateregistration" class="form-control"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xs-12">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">PIC</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="PIC" placeholder="PIC">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">HandPhone</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="handphone" placeholder="Handphone">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Telephone 1</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="phone1" placeholder="Telephone 1">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Telephone 2</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="phone2" placeholder="Telephone 2">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" placeholder="Address" rows="5" id="address"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <a type="submit" href="manage.html" class="btn btn-default">Cancel</a>
+            <a type="submit" href="manage.html" class="btn btn-info pull-right">Save</a>
+          </div>
+          <!-- /.box-footer -->
         </div>
-        <!-- /.box-body -->
       </div>
     </section>
     <!-- /.content -->
@@ -214,17 +311,16 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
 
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+
 <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../bower_components/raphael/raphael.min.js"></script>
 <script src="../bower_components/morris.js/morris.min.js"></script>
@@ -241,18 +337,5 @@
 <script src="../dist/js/adminlte.min.js"></script>
 <script src="../dist/js/pages/dashboard.js"></script>
 <script src="../dist/js/demo.js"></script>
-<script>
-    $(function () {
-        $('#example1').DataTable()
-        $('#example2').DataTable({
-            'paging'      : true,
-            'lengthChange': false,
-            'searching'   : false,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : false
-        })
-    })
-</script>
 </body>
 </html>
