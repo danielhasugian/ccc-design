@@ -666,7 +666,8 @@
       '[Contact Status]',
       'CT - Contacted',
       'FOLL - Follow Up',
-      'HBK - Hubungi Kembali'
+      'HBK - Hubungi Kembali',
+      'NCT - Not COntacted'
     ];
 
     var ct = [
@@ -689,6 +690,11 @@
 
     var hbk = [
       'Hubungi Kembali'
+    ];
+
+    var nct = [
+      'Broken',
+      'Error'
     ];
 
     var hbk_time = [
@@ -729,6 +735,12 @@
 
         case '3':
           $.each(hbk, function(k, v) {
+            $call_result.append($('<option></option>').val(k+1).text(v));
+          });
+          break;
+
+        case '4':
+          $.each(nct, function(k, v) {
             $call_result.append($('<option></option>').val(k+1).text(v));
           });
           break;
