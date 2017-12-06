@@ -16,21 +16,72 @@
   <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="../bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <link rel="stylesheet" href="../dist/css/custom.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <link rel="stylesheet" href="../dist/css/custom.css">
   <![endif]-->
-
-  <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <script>
+      function checkExtension(input) {
+          var r = input.substr(input.lastIndexOf('\\') + 1).split('.')[1];
+          if (r.toUpperCase() !== 'XLS' && r.toUpperCase() !== 'XLSX'){
+              document.getElementById("warning").click();
+          }else{
+              document.getElementById("table1").style = "display:''"
+          }
+      }
+      function confirm() {
+          document.getElementById("confirm").click();
+      }
+  </script>
 </head>
 <body class="hold-transition skin-green sidebar-mini">
-<div class="wrapper">
 
+<button type="button" id="warning" class="btn btn-default" data-toggle="modal" data-target="#modal-default" style="display: none">
+</button>
+
+
+<div class="modal fade" id="modal-default">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>Opps, File should be excel</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" id="confirm" class="btn btn-default" data-toggle="modal" data-target="#modal-confirm" style="display: none">
+</button>
+<div class="modal fade" id="modal-confirm">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure want to save this data ?</p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-info pull-right" href="manage.html">Save</a>
+        <button type="button" class="btn btn-primari pull-left" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
   <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
@@ -45,7 +96,6 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -54,7 +104,6 @@
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
               <li>
-                <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li><!-- start message -->
                     <a href="#">
@@ -68,7 +117,6 @@
                       <p>Why not buy a new awesome theme?</p>
                     </a>
                   </li>
-                  <!-- end message -->
                   <li>
                     <a href="#">
                       <div class="pull-left">
@@ -81,52 +129,16 @@
                       <p>Why not buy a new awesome theme?</p>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="../dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Agent Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="../dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
                 </ul>
               </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
+              <li class="footer"><a href="chat.html">See All Messages</a></li>
             </ul>
           </li>
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="../dist/img/avatar04.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">Supervisor</span>
+              <span class="hidden-xs">Admin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -134,11 +146,11 @@
                 <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Abu Riza - Supervisor
+                  Admin
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
-              <!-- Menu Body -->
+
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
@@ -153,7 +165,7 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-       Sidebar user panel
+      Sidebar user panel
       <div class="user-panel">
         <div class="pull-left image">
           <img src="../dist/img/bpjs-tk.png" class="img-circle" alt="User Image">
@@ -165,25 +177,15 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header"></li>
         <li>
-          <a href="supervisor1.html">
+          <a href="dashboard.html">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-		<li>
-          <a href="supervisor2.html">
-            <i class="fa fa-clock-o"></i> <span>Shift Time</span>
+        <li>
+          <a href="manage.html">
+            <i class="fa fa-clock-o"></i> <span>Manage Data Company</span>
           </a>
-        </li>
-		<li>
-          <a href="supervisor3.html">
-            <i class="fa fa-tasks"></i> <span>Assignment Agent</span>
-          </a>
-        </li>
-		<li>
-          <a href="supervisor4.html">
-            <i class="fa fa-shopping-bag"></i> <span>Bucket</span>
-          </a>
-        </li>
+        </li>s
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -193,117 +195,91 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1> Assignment Agent
+      <h1> Manage Data Company
       </h1>
-      <ol class="breadcrumb pull-left">
-          <li><a href="supervisor1"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Assignment Agent</li>
+      <ol class="breadcrumb">
+        <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="manage.html"><i class="fa fa-dashboard"></i> Manage Data Company</a></li>
+        <li class="active">Form Company</li>
       </ol>
     </section>
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            
-          </div>
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Form</h3>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <!--<div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
+        <div class="form-horizontal">
+          <div class="box-body">
+            <div class="col-lg-12 col-xs-12">
+              <div class="form-group" style="margin-left:40%">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="ss" onchange="checkExtension(this.value)">
 
-              <p>Unique Visitors</p>
+                <p class="help-block">Choose File Data Company</p>
+              </div>
             </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+
+            <table id="table1" class="table table-bordered table-striped" style="display:none">
+              <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Wilayah</th>
+                <th>Status</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td>PT. Garuda Indonesia</td>
+                <td>Barat</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>PT. Anabatic</td>
+                <td>Barat</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>PT. Indonesia Makmur</td>
+                <td>Barat</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Indivara Group</td>
+                <td>Barat</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Tokopedia</td>
+                <td>Timur</td>
+                <td>Active</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Wilayah</th>
+                <th>Status</th>
+              </tr>
+              </tfoot>
+            </table>
           </div>
+
+
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <a type="submit" href="manage.html" class="btn btn-default">Cancel</a>
+            <a type="submit" class="btn btn-info pull-right" onclick="confirm()">Save</a>
+          </div>
+          <!-- /.box-footer -->
         </div>
-        <!-- ./col -->
       </div>
-      <!-- /.row -->
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Assignment Agent Data Table</h3>
-              <a class="btn btn-primary pull-right" href="supervisor3-form.html"><i class="fa fa-plus"></i> <b>Add</b></a>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Agent</th>
-                  <th>Shift</th>
-				  <th>Day</th>
-				  <th>Bucket</th>
-				  <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Anna</td>
-                  <td>2</td>
-				  <td>Monday</td>
-                  <td>Piutang 100 Juta</td>
-				  <td><a class="btn btn-sm" href="supervisor3-form.html?id=1"><i class="fa fa-edit"></i> Edit</a></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Bob</td>
-                  <td>3</td>
-				  <td>Monday</td>
-                  <td>Piutang 1 Tahun</td>
-				  <td><a class="btn btn-sm" href="supervisor3-form.html?id=2"><i class="fa fa-edit"></i> Edit</a></td>
-                </tr>
-                 <tr>
-                  <td>3</td>
-                  <td>Chaplin</td>
-                  <td>1</td>
-				  <td>Monday</td>
-                  <td>Piutang Wilayah Barat</td>
-				  <td><a class="btn btn-sm" href="supervisor3-form.html?id=3"><i class="fa fa-edit"></i> Edit</a></td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>Num</th>
-                  <th>Name</th>
-                  <th>Shift</th>
-				  <th>Day</th>
-				  <th>Bucket</th>
-				  <th>Act</th>
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-
-    </section>
-            </section>
-        <!-- /.Left col -->
-
-
     </section>
     <!-- /.content -->
   </div>
@@ -319,33 +295,26 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-<!-- jQuery 3 -->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
 <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
+    $.widget.bridge('uibutton', $.ui.button);
 </script>
-<!-- Bootstrap 3.3.7 -->
+
+
+
+<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
 <script src="../bower_components/raphael/raphael.min.js"></script>
 <script src="../bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
 <script src="../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
 <script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
 <script src="../bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
 <script src="../bower_components/moment/min/moment.min.js"></script>
 <script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
 <script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
 <script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="../bower_components/fastclick/lib/fastclick.js"></script>
